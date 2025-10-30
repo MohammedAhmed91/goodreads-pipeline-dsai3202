@@ -1,0 +1,76 @@
+[
+  {
+    "Action": {
+      "Operation": "FILL_WITH_CUSTOM",
+      "Parameters": {
+        "columnDataType": "string",
+        "sourceColumn": "review_text",
+        "value": "unknown"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "FILL_WITH_MEDIAN",
+      "Parameters": {
+        "sourceColumn": "rating"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "FILL_WITH_MEDIAN",
+      "Parameters": {
+        "sourceColumn": "n_votes"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_DUPLICATES",
+      "Parameters": {
+        "sourceColumn": "review_text"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_DUPLICATES",
+      "Parameters": {
+        "sourceColumn": "review_id"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "LOWER_CASE",
+      "Parameters": {
+        "sourceColumn": "review_text"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "FORMAT_DATE",
+      "Parameters": {
+        "sourceColumn": "date_added",
+        "targetDateFormat": "yyyy-mm-dd"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_VALUES",
+      "Parameters": {
+        "sourceColumn": "date_added"
+      }
+    },
+    "ConditionExpressions": [
+      {
+        "Condition": "NOT_STARTS_WITH",
+        "Value": "2014",
+        "TargetColumn": "date_added"
+      }
+    ]
+  }
+]
