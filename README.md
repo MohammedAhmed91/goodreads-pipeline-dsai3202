@@ -15,7 +15,7 @@ The project demonstrates how to clean, prepare, and feature-engineer data using 
 - **Job:** `goodreads-cleaning-job`
 - **Dataset:** `goodreads-curated-cleaning`
 - **Recipe:** `goodreads-advanced-cleaning-recipe`
-- **Output Path:** `s3://<your-bucket>/cleaned_v1/`
+- **Output Path:** `s3://goodreads-study-bucket-60105239/cleaned_v1/`
 
 **Tasks Performed:**
 - Filled missing text fields (`review_text`) with `"Unknown"`
@@ -36,7 +36,7 @@ A cleaned dataset with only valid and recent reviews, stored in Parquet format i
 ### 2. Tabular Feature Engineering
 - **Project:** `goodreads-feature-engineering`
 - **Recipe:** `goodreads-feature-engineering-recipe`
-- **Output Path:** `s3://<your-bucket>/features_v1/`
+- **Output Path:** `s3://goodreads-study-bucket-60105239/features_v1/`
 
 **Features Added:**
 | Feature | Description |
@@ -55,7 +55,7 @@ Feature-enriched tabular dataset saved to S3 for modeling.
 ### 3. Text Feature Engineering
 - **Script:** `goodreads_text_features_trial.py`
 - **Service:** Amazon SageMaker Processing
-- **Trial Output:** `s3://<your-bucket>/trial/trial_output.parquet`
+- **Trial Output:** `s3://goodreads-study-bucket-60105239/trial/trial_output.parquet`
 - **Full Feature Output:** `s3://<your-bucket>/features_v2/`
 
 **Process Summary:**
@@ -70,16 +70,10 @@ Feature-enriched tabular dataset saved to S3 for modeling.
 goodreads-pipeline-dsai3202/
 ├── databrew/
 │ ├── recipes/
-│ │ ├── advanced_cleaning_v1.json
 │ │ └── feature_engineering_v1.json
 │ └── jobs/
 ├── sagemaker/
-│ ├── goodreads_text_features_trial.py
-│ └── (optional) goodreads_text_features.py
-├── notebooks/
-│ └── (optional) eda_sample.ipynb
-├── configs/
-│ └── (optional) split_config.json
+│ └──  goodreads_text_features.py
 ├── doc/
 │ └── report.md
 └── README.md
@@ -122,15 +116,13 @@ ratings_count_log
 
 **Branches:**
 - `feature/cleaning-v1`
-- `feature/feature-engineering-v1`
 - `feature/text-features`
 
 **Tags:**
 - `data-cleaned_v1`
-- `feature-engineering_v1`
 - `text-features_v1`
 
-**Commit Message Examples:**
+**Commit Message**
 - `feat(cleaning): add DataBrew cleaning recipe`
 - `feat: feature engineering recipe`
 - `feat: add text feature processing script`
