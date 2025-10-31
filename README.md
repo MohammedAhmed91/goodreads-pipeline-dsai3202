@@ -56,7 +56,7 @@ Feature-enriched tabular dataset saved to S3 for modeling.
 - **Script:** `goodreads_text_features_trial.py`
 - **Service:** Amazon SageMaker Processing
 - **Trial Output:** `s3://goodreads-study-bucket-60105239/trial/trial_output.parquet`
-- **Full Feature Output:** `s3://<your-bucket>/features_v2/`
+- **Full Feature Output:** `s3://goodreads-study-bucket-60105239/features_v2/`
 
 **Process Summary:**
 - Loaded tabular features from `features_v1`
